@@ -1,11 +1,13 @@
 "use client";
-
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "@/app/_HomeComponents/HeroSection";
 
 export default function ParentComponent() {
   return (
-    <div>
-      <HeroSection />
-    </div>
+    <>
+      <section id="home">
+        <HeroSection />
+      </section>
+      <section id="testimonials"></section>
+    </>
   );
 }

@@ -6,17 +6,10 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import ToggleSwitch from "./ToggleSwitch";
 import logo from "../assets/logo.png";
+import { navLinks } from "@/constants";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/handmade-crafts", label: "Handmade Crafts" },
-    { href: "/our-servants", label: "Our Servants" },
-    { href: "/contact", label: "Contact Us" },
-  ];
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-100">
