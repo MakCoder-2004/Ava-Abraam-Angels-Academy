@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+:root {
+  --color-brand-purple: #4a2c7b; /* Main dark purple from "AVA ABRAM'S" background */
+  --color-brand-orange: #f79121; /* Orange from "ANGELS" text */
+  --color-background-light: #f8e8c7; /* Light cream background */
+  --color-accent-pink: #f6a2ba; /* Pink block color from "ACADEMY" */
+  --color-accent-lightblue: #9ad1f3; /* Light blue block color from "ACADEMY" */
+  --color-accent-purple: #b498f2; /* Light purple block color from "ACADEMY" */
+
+  /* Semantic color mapping */
+  --color-primary: var(--color-brand-purple);
+  --color-secondary: var(--color-brand-orange);
+  --color-title: var(--color-brand-orange);
+  --color-paragraph: #333333;
+}
