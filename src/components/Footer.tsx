@@ -17,19 +17,14 @@ import {
   ArrowUp,
 } from "lucide-react";
 
-// Register ScrollTrigger plugin
+// Register ScrollTrigger plugin only once
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 const Footer = () => {
   const footerRef = useRef<HTMLDivElement>(null);
-  const logoRef = useRef<HTMLDivElement>(null);
-  const linksRef = useRef<HTMLDivElement>(null);
-  const socialRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-  const newsletterRef = useRef<HTMLDivElement>(null);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<gsap.Context | null>(null);
 
   const socialLinks = [
     {
@@ -54,114 +49,101 @@ const Footer = () => {
   ];
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Set initial states
-      gsap.set(
-        [
-          logoRef.current,
-          linksRef.current,
-          socialRef.current,
-          contactRef.current,
-          newsletterRef.current,
-        ],
-        {
-          opacity: 0,
-          y: 50,
-        }
-      );
+    // Only run animations if the footer is in the DOM
+    if (!footerRef.current) return;
 
-      gsap.set(bottomRef.current, {
+    // Clear any existing animations first
+    if (animationRef.current) {
+      animationRef.current.revert();
+    }
+
+    animationRef.current = gsap.context(() => {
+      // Check if ScrollTrigger is properly initialized
+      const isScrollTriggerReady = typeof ScrollTrigger !== "undefined";
+
+      // Get all sections we want to animate
+      const sections = gsap.utils.toArray<HTMLElement>([
+        ".footer-logo-section",
+        ".footer-links-section",
+        ".footer-contact-section",
+        ".footer-social-section",
+        ".footer-bottom-section",
+      ]);
+
+      // Set initial state (hidden)
+      gsap.set(sections, {
         opacity: 0,
         y: 30,
+        willChange: "transform, opacity",
       });
 
-      // Create scroll-triggered animation
+      // Create animation timeline
       const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
+        defaults: {
+          ease: "power3.out",
+          duration: 0.6,
         },
+        scrollTrigger: isScrollTriggerReady
+          ? {
+              trigger: footerRef.current,
+              start: "top bottom-=100",
+              end: "bottom top",
+              toggleActions: "play none none none",
+              scrub: false,
+              invalidateOnRefresh: true,
+            }
+          : undefined,
       });
 
-      // Animate sections in sequence
-      tl.to(logoRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-      })
-        .to(
-          [linksRef.current, socialRef.current, contactRef.current],
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            stagger: 0.2,
-            ease: "power3.out",
-          },
-          "-=0.4"
-        )
-        .to(
-          newsletterRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power3.out",
-          },
-          "-=0.2"
-        )
-        .to(
-          bottomRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "-=0.2"
-        );
+      // Animate sections with proper staggering
+      tl.fromTo(
+        sections,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, stagger: 0.15 }
+      );
 
-      // Floating animation for decorative elements
-      gsap.to(".footer-float", {
-        y: -5,
-        duration: 2,
-        ease: "power1.inOut",
-        yoyo: true,
-        repeat: -1,
-        stagger: 0.3,
-      });
-
-      // Social icons hover animation
-      const socialIcons = document.querySelectorAll(".social-icon");
-      socialIcons.forEach((icon) => {
-        icon.addEventListener("mouseenter", () => {
-          gsap.to(icon, {
-            scale: 1.2,
-            rotation: 10,
-            duration: 0.3,
-            ease: "back.out(1.7)",
+      // Add hover effects for social icons (desktop only)
+      if (window.innerWidth > 768) {
+        const socialIcons = gsap.utils.toArray<HTMLElement>(".social-icon");
+        socialIcons.forEach((icon) => {
+          icon.addEventListener("mouseenter", () => {
+            gsap.to(icon, {
+              scale: 1.1,
+              duration: 0.2,
+              ease: "power2.out",
+            });
+          });
+          icon.addEventListener("mouseleave", () => {
+            gsap.to(icon, {
+              scale: 1,
+              duration: 0.3,
+              ease: "elastic.out(1, 0.5)",
+            });
           });
         });
+      }
 
-        icon.addEventListener("mouseleave", () => {
-          gsap.to(icon, {
-            scale: 1,
-            rotation: 0,
-            duration: 0.3,
-            ease: "back.out(1.7)",
-          });
-        });
-      });
+      // Refresh ScrollTrigger on resize
+      const handleResize = () => ScrollTrigger.refresh();
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
     }, footerRef);
 
-    return () => ctx.revert();
+    return () => {
+      if (animationRef.current) {
+        animationRef.current.revert();
+      }
+    };
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -169,19 +151,17 @@ const Footer = () => {
       ref={footerRef}
       className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden"
     >
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="footer-float absolute top-10 left-10 w-20 h-20 bg-orange-500/10 rounded-full"></div>
-        <div className="footer-float absolute top-20 right-20 w-16 h-16 bg-orange-400/10 rounded-full"></div>
-        <div className="footer-float absolute bottom-20 left-1/4 w-12 h-12 bg-orange-300/10 rounded-full"></div>
-        <div className="footer-float absolute bottom-10 right-1/3 w-24 h-24 bg-orange-500/10 rounded-full"></div>
+      {/* Simplified decorative elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-10 left-10 w-20 h-20 bg-orange-500/10 rounded-full opacity-0 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-16 h-16 bg-orange-400/10 rounded-full opacity-0 animate-pulse"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         {/* Main footer content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           {/* Logo and description */}
-          <div ref={logoRef} className="lg:col-span-1 ">
+          <div className="footer-logo-section lg:col-span-1">
             <div className="flex flex-col mb-6">
               <span className="text-2xl font-bold text-white leading-tight">
                 Ava Abraam
@@ -203,7 +183,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation Links */}
-          <div ref={linksRef} className="lg:col-span-1 ">
+          <div className="footer-links-section lg:col-span-1">
             <h3 className="text-xl font-bold mb-6 text-orange-400">
               Quick Links
             </h3>
@@ -223,7 +203,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Information */}
-          <div ref={contactRef} className="lg:col-span-1 ">
+          <div className="footer-contact-section lg:col-span-1">
             <h3 className="text-xl font-bold mb-6 text-orange-400">
               Contact Info
             </h3>
@@ -248,7 +228,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media Links */}
-        <div ref={socialRef} className="border-t border-gray-700 pt-8 mb-8">
+        <div className="footer-social-section border-t border-gray-700 pt-8 mb-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
               <h4 className="text-lg font-semibold mb-4 text-orange-400">
@@ -275,6 +255,7 @@ const Footer = () => {
             <button
               onClick={scrollToTop}
               className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />
               Back to Top
@@ -283,10 +264,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom copyright */}
-        <div
-          ref={bottomRef}
-          className="border-t border-gray-700 pt-6 text-center"
-        >
+        <div className="footer-bottom-section border-t border-gray-700 pt-6 text-center">
           <p className="text-gray-400">
             © {new Date().getFullYear()} Ava Abraam Angels Academy. All rights
             reserved.
