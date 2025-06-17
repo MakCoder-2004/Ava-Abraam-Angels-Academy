@@ -179,9 +179,9 @@ const Footer = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         {/* Main footer content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           {/* Logo and description */}
-          <div ref={logoRef} className="lg:col-span-1">
+          <div ref={logoRef} className="lg:col-span-1 ">
             <div className="flex flex-col mb-6">
               <span className="text-2xl font-bold text-white leading-tight">
                 Ava Abraam
@@ -191,7 +191,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Nurturing young minds with love, creativity, and excellence.
+              Serving young minds with love, creativity, and excellence.
               Building tomorrow&rsquo;s leaders today.
             </p>
             <div className="flex items-center gap-2 text-orange-400">
@@ -203,7 +203,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation Links */}
-          <div ref={linksRef} className="lg:col-span-1">
+          <div ref={linksRef} className="lg:col-span-1 ">
             <h3 className="text-xl font-bold mb-6 text-orange-400">
               Quick Links
             </h3>
@@ -223,7 +223,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Information */}
-          <div ref={contactRef} className="lg:col-span-1">
+          <div ref={contactRef} className="lg:col-span-1 ">
             <h3 className="text-xl font-bold mb-6 text-orange-400">
               Contact Info
             </h3>
@@ -243,26 +243,6 @@ const Footer = () => {
                 <Mail className="w-5 h-5 text-orange-400 flex-shrink-0" />
                 <p className="text-gray-300">info@avaacademy.com</p>
               </div>
-            </div>
-          </div>
-
-          {/* Newsletter Signup */}
-          <div ref={newsletterRef} className="lg:col-span-1">
-            <h3 className="text-xl font-bold mb-6 text-orange-400">
-              Stay Connected
-            </h3>
-            <p className="text-gray-300 mb-4">
-              Subscribe to our newsletter for updates and events!
-            </p>
-            <div className="flex flex-col gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-300"
-              />
-              <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                Subscribe
-              </button>
             </div>
           </div>
         </div>
@@ -308,20 +288,8 @@ const Footer = () => {
           className="border-t border-gray-700 pt-6 text-center"
         >
           <p className="text-gray-400">
-            © 2024 Ava Abraam Angels Academy. All rights reserved. |
-            <Link
-              href="/privacy"
-              className="hover:text-orange-400 transition-colors duration-300 ml-1"
-            >
-              Privacy Policy
-            </Link>
-            {" | "}
-            <Link
-              href="/terms"
-              className="hover:text-orange-400 transition-colors duration-300"
-            >
-              Terms of Service
-            </Link>
+            © {new Date().getFullYear()} Ava Abraam Angels Academy. All rights
+            reserved.
           </p>
         </div>
       </div>

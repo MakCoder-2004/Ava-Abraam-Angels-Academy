@@ -107,7 +107,7 @@ const HeroSection = () => {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100 overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100 overflow-hidden "
     >
       {/* Background decorative elements */}
       <div ref={decorativeRef} className="absolute inset-0 pointer-events-none">
@@ -117,11 +117,11 @@ const HeroSection = () => {
         <div className="decorative-element floating absolute bottom-20 right-10 w-14 h-14 bg-orange-200 rounded-full opacity-20"></div>
 
         {/* Geometric shapes */}
-        <div className="decorative-element floating absolute top-70 left-1/6 w-8 h-8 bg-orange-400 transform rotate-45 opacity-20 hidden sm:block"></div>
-        <div className="decorative-element floating absolute top-20 right-1/4 w-6 h-6 bg-orange-500 transform rotate-12 opacity-25 hidden sm:block"></div>
+        <div className="decorative-element floating absolute top-90 left-1/6 w-8 h-8 bg-orange-400 transform rotate-45 opacity-20 hidden sm:block"></div>
+        <div className="decorative-element floating absolute top-30 right-1/4 w-6 h-6 bg-orange-500 transform rotate-12 opacity-25 hidden sm:block"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-16">
         <div className="text-center">
           {/* Main heading */}
           <h1
@@ -141,7 +141,7 @@ const HeroSection = () => {
             ref={subtitleRef}
             className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto"
           >
-            Nurturing young minds with love, creativity, and excellence. Where
+            Serving young minds with love, creativity, and excellence. Where
             every child discovers their unique talents and grows into confident,
             compassionate individuals.
           </p>
@@ -151,7 +151,10 @@ const HeroSection = () => {
             ref={buttonsRef}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
-            <Link href="/about" className="group bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+            <Link
+              href="/about"
+              className="group bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+            >
               Explore Us
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
