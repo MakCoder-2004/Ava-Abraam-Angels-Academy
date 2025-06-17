@@ -1,16 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-import image1 from "@/assets/gallery/image1.jpg";
-import image2 from "@/assets/gallery/image2.jpg";
-import image3 from "@/assets/gallery/image3.jpg";
-import image4 from "@/assets/gallery/image4.jpg";
-import image5 from "@/assets/gallery/image5.jpg";
-import image6 from "@/assets/gallery/image6.jpg";
-import image7 from "@/assets/gallery/image7.jpg";
-import image8 from "@/assets/gallery/image8.jpg";
-import image9 from "@/assets/gallery/image9.jpg";
-import image10 from "@/assets/gallery/image10.jpg";
+import image1 from "@/assets/gallery/img1.png";
+import image2 from "@/assets/gallery/img2.png";
+import image3 from "@/assets/gallery/img3.png";
+import image4 from "@/assets/gallery/img4.png";
+import image5 from "@/assets/gallery/img5.png";
+import image6 from "@/assets/gallery/img6.png";
+import image7 from "@/assets/gallery/img7.png";
+import image8 from "@/assets/gallery/img8.png";
+
 import Image, { StaticImageData } from "next/image";
 
 type GalleryType = {
@@ -50,14 +49,6 @@ const galleryImages: GalleryType[] = [
   {
     src: image8,
     label: "08",
-  },
-  {
-    src: image9,
-    label: "09",
-  },
-  {
-    src: image10,
-    label: "10",
   },
 ];
 
@@ -145,14 +136,14 @@ const Gallery = () => {
       {/* Marker */}
       <div
         ref={markerWrapperRef}
-        className="absolute top-0 left-0 h-screen w-max"
+        className="absolute top-5 left-5 h-screen w-max"
       >
         <div className="relative w-0.5 h-full bg-black">
-          <div className="absolute top-12 -left-5 w-10 h-10 bg-white border-2 border-black rounded-full"></div>
+          <div className="absolute top-12 -left-5 w-10 h-10 bg-orange-400 border-2 border-black rounded-full"></div>
         </div>
         <div
           ref={activeSlideRef}
-          className="absolute top-14 left-10 text-black"
+          className="absolute top-6 left-10 text-black"
         >
           1/10
         </div>
@@ -162,16 +153,17 @@ const Gallery = () => {
       <div className="slider w-full h-full overflow-hidden">
         <div
           ref={sliderWrapperRef}
-          className="w-max h-full flex items-center gap-[100px] px-[150px]"
+          className="w-max h-full flex items-center gap-[50px] "
         >
           {galleryImages.map((image, index) => (
-            <div key={index} className="w-[80px] h-[80px] bg-gray-300">
+            <div key={index} className="w-[400px] h-[400px] bg-gray-300">
+              {/* ! Fix the size of the image from photoshop ! */}
               <Image
                 src={image.src}
                 alt={image.label}
-                width={20}
-                height={20}
-                className="object-"
+                width={500}
+                height={500}
+                className="object-cover"
               />
             </div>
           ))}

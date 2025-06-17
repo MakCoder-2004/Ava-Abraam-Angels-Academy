@@ -2,24 +2,13 @@
 import HeroSection from "@/app/_HomeComponents/HeroSection";
 import Testimonials from "./_HomeComponents/Testimonials";
 import SectionTitle from "@/components/SectionTitle";
-import Gallery from "./_HomeComponents/gallery";
+import Gallery from "./_HomeComponents/Gallery";
 
 export default function Home() {
   return (
     <>
       <section id="home" className="border-b-4 border-orange-200/30">
         <HeroSection />
-      </section>
-
-      <section id="OurMission" className="my-28">
-        <SectionTitle
-          title="Our Mission"
-          align="center"
-          subtitle="To provide hope, opportunity, and a brighter future for every child in need."
-          variant="gradient"
-          key={"mission"}
-          className="mb-18"
-        />
       </section>
 
       <section id="gallery" className="my-28">
@@ -32,6 +21,17 @@ export default function Home() {
           className="mb-18"
         />
         <Gallery />
+      </section>
+
+      <section id="OurMission" className="my-28">
+        <SectionTitle
+          title="Our Mission"
+          align="center"
+          subtitle="To provide hope, opportunity, and a brighter future for every child in need."
+          variant="gradient"
+          key={"mission"}
+          className="mb-18"
+        />
       </section>
 
       <section id="testimonials" className="my-28">
