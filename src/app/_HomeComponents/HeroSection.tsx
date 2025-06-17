@@ -107,7 +107,7 @@ const HeroSection = () => {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100 overflow-hidden "
+      className="relative min-h-screen bg-gradient-to-br from-orange-50 via-orange-50/20 to-orange-100 overflow-hidden "
     >
       {/* Background decorative elements */}
       <div ref={decorativeRef} className="absolute inset-0 pointer-events-none">

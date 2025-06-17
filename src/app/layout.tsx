@@ -10,7 +10,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Navbar />
-      <body>{children}</body>
+      <body className="bg-orange-100/50">{children}</body>
       <footer>
         <Footer />
       </footer>
