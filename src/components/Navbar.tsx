@@ -88,7 +88,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-transparent absolute w-full z-50">
+    <div className="bg-transparent absolute w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-18">
           {/* Logo */}
@@ -175,7 +175,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

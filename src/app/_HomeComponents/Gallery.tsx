@@ -132,19 +132,13 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="w-screen h-screen overflow-hidden relative">
+    <div className="h-screen overflow-hidden relative">
       {/* Marker */}
-      <div
-        ref={markerWrapperRef}
-        className="absolute top-5 left-5 h-screen w-max"
-      >
+      <div ref={markerWrapperRef} className="absolute left-5 h-screen w-max">
         <div className="relative w-0.5 h-full bg-black">
           <div className="absolute top-12 -left-5 w-10 h-10 bg-orange-400 border-2 border-black rounded-full"></div>
         </div>
-        <div
-          ref={activeSlideRef}
-          className="absolute top-6 left-10 text-black"
-        >
+        <div ref={activeSlideRef} className="absolute top-6 left-10 text-black">
           1/10
         </div>
       </div>
@@ -157,7 +151,6 @@ const Gallery = () => {
         >
           {galleryImages.map((image, index) => (
             <div key={index} className="w-[400px] h-[400px] bg-gray-300">
-              {/* ! Fix the size of the image from photoshop ! */}
               <Image
                 src={image.src}
                 alt={image.label}

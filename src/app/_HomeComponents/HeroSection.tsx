@@ -158,9 +158,12 @@ const HeroSection = () => {
               Explore Us
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <button className="bg-white text-orange-500 border-2 border-orange-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+            <Link
+              href="#testimonials"
+              className="bg-white text-orange-500 border-2 border-orange-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
               See Our Feedbacks
-            </button>
+            </Link>
           </div>
         </div>
       </div>

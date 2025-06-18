@@ -124,7 +124,7 @@ const SectionTitle = ({
       <div className={`${alignClasses[align]} max-w-max`}>
         <h2
           ref={titleRef}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-x"
+          className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-x"
         >
           {title}
         </h2>
