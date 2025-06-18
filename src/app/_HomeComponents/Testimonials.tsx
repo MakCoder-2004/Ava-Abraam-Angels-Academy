@@ -4,37 +4,31 @@ import { Marquee } from "@/components/magicui/marquee";
 const reviews = [
   {
     name: "Jack",
-    username: "@jack",
     body: "I've never seen anything like this before. It's amazing. I love it.",
     img: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jack&mouth=smile&eyes=happy",
   },
   {
     name: "Jill",
-    username: "@jill",
     body: "I don't know what to say. I'm speechless. This is amazing.",
     img: "https://api.dicebear.com/7.x/big-ears/svg?seed=Jill&smile=happy",
   },
   {
     name: "John",
-    username: "@john",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://api.dicebear.com/7.x/miniavs/svg?seed=John",
   },
   {
     name: "Jane",
-    username: "@jane",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://api.dicebear.com/7.x/lorelei/svg?seed=Jane&face=smiling",
   },
   {
     name: "Jenny",
-    username: "@jenny",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jenny",
   },
   {
     name: "James",
-    username: "@james",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://api.dicebear.com/7.x/big-smile/svg?seed=James",
   },
@@ -46,12 +40,10 @@ const secondRow = reviews.slice(reviews.length / 2);
 const ReviewCard = ({
   img,
   name,
-  username,
   body,
 }: {
   img: string;
   name: string;
-  username: string;
   body: string;
 }) => {
   return (
@@ -70,7 +62,6 @@ const ReviewCard = ({
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
         </div>
       </div>
       <blockquote className="mt-2 text-sm">{body}</blockquote>
@@ -83,12 +74,12 @@ const Testimonials = () => {
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+          <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
       <Marquee reverse pauseOnHover className="[--duration:20s]">
         {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+          <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
     </div>
