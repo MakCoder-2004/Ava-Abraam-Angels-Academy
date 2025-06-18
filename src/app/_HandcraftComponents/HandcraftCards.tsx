@@ -3,9 +3,18 @@
 import { useEffect, useRef } from "react";
 import HandcraftCard from "@/components/HandcraftCard";
 import { gsap } from "gsap";
-import { handcrafts } from "@/constants/index";
 
-const HandcraftCards = () => {
+interface HandcraftCardsProps {
+  handcrafts: {
+    id: string;
+    image: string;
+    title: string;
+    description: string;
+    youtubeUrl: string;
+  }[];
+}
+
+const HandcraftCards = ({ handcrafts }: HandcraftCardsProps) => {
   const headerRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
 
@@ -29,20 +38,31 @@ const HandcraftCards = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-orange-50 py-8 md:py-12 lg:py-16">
+    <div className="min-h-screen bg-orange-50 py-8 md:py-12 lg:py-10">
       <div className="container mx-auto px-4 lg:max-w-7xl md:max-w-4xl sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-16">
-          {handcrafts.map((handcraft, index) => (
-            <HandcraftCard
-              key={handcraft.id}
-              image={handcraft.image}
-              title={handcraft.title}
-              description={handcraft.description}
-              youtubeUrl={handcraft.youtubeUrl}
-              index={index}
-            />
-          ))}
-        </div>
+        {handcrafts.length === 0 ? (
+          <div className="text-center py-16">
+            <h3 className="text-xl font-medium text-gray-700">
+              No handcrafts found
+            </h3>
+            <p className="mt-2 text-gray-500">
+              Try searching for something else...
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-16">
+            {handcrafts.map((handcraft, index) => (
+              <HandcraftCard
+                key={handcraft.id}
+                image={handcraft.image}
+                title={handcraft.title}
+                description={handcraft.description}
+                youtubeUrl={handcraft.youtubeUrl}
+                index={index}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -49,9 +49,9 @@ const HandcraftCard: React.FC<HandcraftCardProps> = ({
     gsap.to(card, {
       opacity: 1,
       y: 0,
-      duration: 0.6,
+      duration: 0.3,
       ease: "power2.out",
-      delay: index * 0.1,
+      delay: index * 0.01,
       scrollTrigger: {
         trigger: card,
         start: "top 85%",
