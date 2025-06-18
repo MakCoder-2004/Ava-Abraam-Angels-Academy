@@ -170,7 +170,7 @@ const GridLayout = () => {
   return (
     <div
       ref={gridRef}
-      className="grid h-screen grid-cols-8 grid-rows-7 gap-3 my-20 mx-28"
+      className="grid h-screen grid-cols-8 grid-rows-7 gap-3 mb-20 mx-28"
     >
       {gridData.map((item) => (
         <div

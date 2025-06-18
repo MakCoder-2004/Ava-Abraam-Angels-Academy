@@ -35,7 +35,7 @@ const InfoSection = () => {
           opacity: 0,
           duration: 0.6,
           delay: 0.5 + i * 0.1,
-          ease: "elastic.out(1, 0.5)",
+          ease: "elastic.out(2, 0.9)",
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 70%",

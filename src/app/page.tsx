@@ -35,7 +35,7 @@ export default function Home() {
         <OurMission />
       </section>
 
-      <section id="testimonials" className="my-32">
+      <section id="testimonials" className="mb-42 pt-40">
         <SectionTitle
           title="Feedbacks"
           align="center"

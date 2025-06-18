@@ -14,11 +14,11 @@ const About = () => {
         subtitle="Discover our nurturing approach to early childhood education and how we help young minds grow and flourish at Abram's Angels Academy."
       />
 
-      <section id="WhoAreWe" className="my-32">
+      <section id="WhoAreWe" className="mt-32">
         <InfoSection />
       </section>
 
-      <section id="ScrollText" className="my-80">
+      <section id="ScrollText" className="my-90">
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden text-orange-500 gap-5">
           <GoNorthStar className="text-2xl" />
           <VelocityScroll className="uppercase">
