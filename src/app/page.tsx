@@ -23,7 +23,7 @@ export default function Home() {
         <Gallery />
       </section>
 
-      <section id="OurMission" className="my-32">
+      <section id="OurMission" className="pt-8">
         <SectionTitle
           title="Our Mission"
           align="center"
@@ -35,7 +35,7 @@ export default function Home() {
         <OurMission />
       </section>
 
-      <section id="testimonials" className="mb-42 pt-40">
+      <section id="testimonials" className="mb-60 pt-40">
         <SectionTitle
           title="Feedbacks"
           align="center"

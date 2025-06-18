@@ -1,9 +1,8 @@
-// Contact.tsx
 import InputContainer from "@/components/InputContainer";
 import PageTitle from "@/components/PageTitle";
 import React from "react";
 
-const Contact = () => {
+const contact = () => {
   return (
     <>
       <PageTitle
@@ -44,4 +43,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default contact;

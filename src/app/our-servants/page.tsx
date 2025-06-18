@@ -10,8 +10,9 @@ const OurServants = () => {
         title_WordTwo="Servants"
         subtitle="Meet our talanted team of compassionate servants, committed to serving with humility, care, and unwavering devotion."
       />
-
-      <ServantShowcase />
+      <div className="max-w-8xl mx-auto px-6">
+        <ServantShowcase />
+      </div>
     </div>
   );
 };

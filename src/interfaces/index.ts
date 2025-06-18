@@ -3,3 +3,11 @@ export interface servant {
   name: string;
   image: string;
 }
+
+export interface handcraft {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  youtubeUrl: string;
+}
