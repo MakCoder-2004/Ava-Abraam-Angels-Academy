@@ -38,7 +38,7 @@ const HandcraftCards = ({ handcrafts }: HandcraftCardsProps) => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-orange-50 py-8 md:py-12 lg:py-10">
+    <div className="min-h-screen bg-orange-50 py-8 md:py-12 lg:py-10 mb-12">
       <div className="container mx-auto px-4 lg:max-w-7xl md:max-w-4xl sm:px-6 md:px-8 lg:px-12 xl:px-16">
         {handcrafts.length === 0 ? (
           <div className="text-center py-16">
