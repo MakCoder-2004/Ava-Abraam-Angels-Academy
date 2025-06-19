@@ -9,10 +9,12 @@ import gsap from "gsap";
 import ToggleSwitch from "./ToggleSwitch";
 import logo from "../assets/logo.png";
 import { navLinks } from "@/constants";
+import { useLoading } from "@/contexts/LoadingContext";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isNavigating, setIsNavigating] = useState(false);
+  const { setIsLoading } = useLoading();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const toggleRef = useRef<HTMLDivElement>(null);
@@ -26,7 +28,8 @@ export default function Navbar() {
   // Handle navigation state
   useEffect(() => {
     setIsNavigating(false);
-  }, [pathname]);
+    setIsLoading(false);
+  }, [pathname, setIsLoading]);
 
   // GSAP animations for mobile menu
   useEffect(() => {
@@ -90,6 +93,7 @@ export default function Navbar() {
 
   const handleNavigation = () => {
     setIsNavigating(true);
+    setIsLoading(true);
     setIsMobileMenuOpen(false);
   };
 

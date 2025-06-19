@@ -1,7 +1,22 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import "@/Css/loadingStyles.css";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const HamsterWheelLoader: React.FC = () => {
+  const { setIsLoading } = useLoading();
+
+  useEffect(() => {
+    // Set loading to true when component mounts
+    setIsLoading(true);
+
+    // Set loading to false when component unmounts
+    return () => {
+      setIsLoading(false);
+    };
+  }, [setIsLoading]);
+
   return (
     <div className="loader-container">
       <div
