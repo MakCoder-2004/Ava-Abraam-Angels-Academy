@@ -58,7 +58,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   }, []);
 
   return (
-    <div ref={searchRef} className="w-full max-w-md mx-auto mb-8">
+    <div ref={searchRef} className="w-full max-w-md mx-auto px-6 mb-8">
       <div className="relative">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <svg
@@ -81,7 +81,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           placeholder="Search handcrafts..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="w-full pl-10 pr-4 py-3 border-2 border-black rounded-lg bg-transparent focus:outline-none focus:border-orange-500 transition-colors duration-200 text-gray-800 placeholder-gray-500"
+          className="w-full pl-10 pr-4 py-3 border-2 border-black rounded-4xl bg-transparent focus:outline-none focus:border-orange-500 transition-colors duration-200 text-gray-800 placeholder-gray-500"
         />
       </div>
       {searchTerm && (
