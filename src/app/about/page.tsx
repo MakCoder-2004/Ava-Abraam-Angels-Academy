@@ -7,6 +7,7 @@ import InfoSection from "../_AboutComponents/InfoSection";
 
 const About = () => {
   return (
+    
     <div>
       <PageTitle
         title_WordOne="About"
@@ -40,6 +41,8 @@ const About = () => {
         </div>
       </section>
     </div>
+
+
   );
 };
 
