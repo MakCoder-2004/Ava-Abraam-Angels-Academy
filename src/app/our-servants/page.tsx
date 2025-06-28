@@ -10,7 +10,7 @@ import { servants } from "@/constants/index";
 const OurServants = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
+  const itemsPerPage = 6;
 
   const filteredServants = servants.filter((servant) => {
     const lowerSearchTerm = searchTerm.toLowerCase();

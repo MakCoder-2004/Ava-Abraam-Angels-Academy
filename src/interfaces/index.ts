@@ -1,7 +1,9 @@
+import { StaticImageData } from "next/image";
+
 export interface servant {
   id: number;
   name: string;
-  image: string;
+  image: StaticImageData;
 }
 
 export interface handcraft {
