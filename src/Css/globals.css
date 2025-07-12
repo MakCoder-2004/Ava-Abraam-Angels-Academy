@@ -5,7 +5,40 @@
 
 /* Global font configuration */
 * {
-  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+/* Arabic font configuration */
+html[lang="ar"] * {
+  font-family: "Segoe UI", "Tahoma", "Arial", "Noto Sans Arabic", "Amiri",
+    "Traditional Arabic", sans-serif;
+}
+
+/* RTL support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .space-x-8 > * + * {
+  margin-left: 0;
+  margin-right: 2rem;
+}
+
+[dir="rtl"] .space-x-4 > * + * {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+[dir="rtl"] .space-x-3 > * + * {
+  margin-left: 0;
+  margin-right: 0.75rem;
+}
+
+/* RTL arrow animation */
+[dir="rtl"] .group-hover\:translate-x-1 {
+  transform: translateX(-0.25rem);
 }
 
 :root {

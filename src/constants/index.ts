@@ -133,54 +133,177 @@ export const servants: servant[] = [
   // },
 ];
 
-import { handcraft } from "../interfaces/index";
-export const handcrafts: handcraft[] = [
+// Imports of the handcrafts images
+import popsicleStickSantaCraft from "../assets/handcrafts/popsicleStickSantaCraft.jpg";
+import christmasHouseCraft from "../assets/handcrafts/christmasHouseCraft.jpg";
+import christmasElfCraft from "../assets/handcrafts/christmasElfCraft.jpg";
+import christmasBallCraft from "../assets/handcrafts/christmasBallCraft.jpg";
+import christmasCraftsNutcracker from "../assets/handcrafts/christmasCraftsNutcracker.jpg";
+import christmasDecorCraft from "../assets/handcrafts/christmasDecorCraft.jpg";
+import christmasTreeCraft from "../assets/handcrafts/christmasTreeCraft.jpg";
+import santaClausFaceCraft from "../assets/handcrafts/santaClausFaceCraft.jpg";
+import christmasAngelCraft from "../assets/handcrafts/christmasAngelCraft.jpg";
+import popsicleStickChristmasHouseCraft from "../assets/handcrafts/popsicleStickChristmasHouseCraft.jpg";
+import glitterFoamChristmasTreeCraft from "../assets/handcrafts/glitterFoamChristmasTreeCraft.jpg";
+import miniChristmasWreathCraft from "../assets/handcrafts/miniChristmasWreathCraft.jpg";
+//---------------------
+
+import { Handcraft } from "../interfaces/index";
+export const handcrafts: Handcraft[] = [
   {
     id: 1,
-    image: "/placeholder.svg?height=300&width=400",
-    title: "Macrame Wall Hanging",
-    description:
-      "Learn how to create beautiful macrame wall hangings with simple knots and natural cotton rope. Perfect for beginners looking to add bohemian charm to their home decor.",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    image: popsicleStickSantaCraft,
+    title: {
+      en: "Popsicle Stick Santa Craft",
+      ar: "حرفة بابا نويل من أعواد المصاصة",
+    },
+    description: {
+      en: "Learn how to create a charming Santa Claus using popsicle sticks, felt, and googly eyes. A fun and easy Christmas craft perfect for kids and festive DIY decor lovers.",
+      ar: "تعلم كيفية صنع بابا نويل الساحر باستخدام أعواد المصاصة واللباد والعيون المتحركة. حرفة كريسماس ممتعة وسهلة مثالية للأطفال وعشاق الزينة اليدوية.",
+    },
+    youtubeUrl: "https://youtu.be/tN7HtlDo2nQ?si=Xo5g84pN9GHZjyJY",
   },
   {
     id: 2,
-    image: "/placeholder.svg?height=300&width=400",
-    title: "Hand-Painted Ceramic Bowls",
-    description:
-      "Discover the art of ceramic painting and create stunning decorative bowls. This tutorial covers glazing techniques and firing processes for beautiful results.",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    image: christmasHouseCraft,
+    title: {
+      en: "Christmas House Craft",
+      ar: "حرفة بيت الكريسماس",
+    },
+    description: {
+      en: "Learn how to create your own miniature holiday house with colorful paper and foam accessories. A cozy winter project that brings whimsical charm to your seasonal decorations.",
+      ar: "تعلم كيفية صنع منزل العطلات المصغر الخاص بك باستخدام الورق الملون وملحقات الرغوة. مشروع شتوي دافئ يجلب سحرًا خياليًا إلى زينتك الموسمية.",
+    },
+    youtubeUrl: "https://youtu.be/QhbGAJNMmbs?si=rVYzX2HWVFrw6Ooc",
   },
   {
     id: 3,
-    image: "/placeholder.svg?height=300&width=400",
-    title: "Knitted Cozy Blanket",
-    description:
-      "Master the basics of knitting while creating a warm, cozy blanket perfect for cold evenings. Includes tips for choosing yarn and maintaining consistent tension.",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    image: christmasElfCraft,
+    title: {
+      en: "Christmas Elf Craft",
+      ar: "حرفة جنية الكريسماس",
+    },
+    description: {
+      en: "Learn how to create a cheerful Christmas elf with glitter paper and popsicle sticks. A sparkly, playful addition to your handmade holiday collection, perfect for little crafters.",
+      ar: "تعلم كيفية صنع جنية كريسماس مرح باستخدام ورق اللمعان وأعواد المصاصة. إضافة لامعة ومرحة لمجموعة العطلات اليدوية الخاصة بك، مثالية للحرفيين الصغار.",
+    },
+    youtubeUrl: "https://youtu.be/yhIRORdybqk?si=KtNfzOa-Lw4ALCiu",
   },
   {
     id: 4,
-    image: "/placeholder.svg?height=300&width=400",
-    title: "Wooden Jewelry Box",
-    description:
-      "Build a beautiful wooden jewelry box from scratch using basic woodworking tools. Learn about wood selection, joinery techniques, and finishing touches.",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    image: christmasBallCraft,
+    title: {
+      en: "Christmas Ball Craft",
+      ar: "حرفة كرة الكريسماس",
+    },
+    description: {
+      en: "Learn how to create an elegant holiday ornament using shimmering purple paper and ribbon. A simple yet stunning craft to elevate your tree with a touch of DIY sophistication.",
+      ar: "تعلم كيفية صنع زينة عطلات أنيقة باستخدام ورق أرجواني لامع وشريط. حرفة بسيطة ولكنها مذهلة لرفع مستوى شجرتك بلمسة من التطور اليدوي.",
+    },
+    youtubeUrl: "https://youtu.be/uRZuRmL3Qqw?si=0eVLRkANvVb5Ou6r",
   },
   {
     id: 5,
-    image: "/placeholder.svg?height=300&width=400",
-    title: "Embroidered Tote Bag",
-    description:
-      "Transform a plain canvas tote bag into a work of art with hand embroidery. Perfect project for learning different stitching techniques and patterns.",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    image: christmasCraftsNutcracker,
+    title: {
+      en: "Christmas Crafts Nutcracker",
+      ar: "حرفة جندي كسارة البندق",
+    },
+    description: {
+      en: "Learn how to make Nutcracker Figure Assemble a classic nutcracker soldier with painted popsicle sticks and felt accents. A creative twist on a holiday favorite, ideal for gifting or decorating your mantel.",
+      ar: "تعلم كيفية صنع جندي كسارة البندق الكلاسيكي باستخدام أعواد مصاصة ملونة وقطع من اللباد. لمسة إبداعية على المفضل في العطلات، مثالية للهدايا أو تزيين الموقد.",
+    },
+    youtubeUrl: "https://youtu.be/H0YRVs6KEU4?si=Yg9GunX3dJRNqFvr",
   },
   {
     id: 6,
-    image: "/placeholder.svg?height=300&width=400",
-    title: "Polymer Clay Earrings",
-    description:
-      "Create unique and colorful earrings using polymer clay. This tutorial covers sculpting, texturing, baking, and finishing techniques for professional results.",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    image: christmasDecorCraft,
+    title: {
+      en: "Christmas decor craft",
+      ar: "حرفة زينة الكريسماس",
+    },
+    description: {
+      en: "Learn how to craft festive felt decorations using simple stitching and layering techniques. A joyful project perfect for beginners who want to bring handmade warmth to their holiday spaces.",
+      ar: "تعلم كيفية صنع زينة من اللباد باستخدام تقنيات الخياطة البسيطة والطبقات. مشروع ممتع مثالي للمبتدئين الذين يرغبون في إضافة دفء يدوي إلى مساحاتهم في العطلات.",
+    },
+    youtubeUrl: "https://youtu.be/HAVjUc__2V8?si=zNF0Z0nrarCOkX-T",
+  },
+  {
+    id: 7,
+    image: christmasTreeCraft,
+    title: {
+      en: "Christmas tree craft",
+      ar: "حرفة شجرة الكريسماس",
+    },
+    description: {
+      en: "Discover how to create mini paper Christmas trees adorned with beads and glitter. Great for crafters of all ages looking to personalize their tree with unique, handmade charm.",
+      ar: "اكتشف كيفية صنع أشجار كريسماس صغيرة من الورق مزينة بالخرز واللمعان. رائع للحرفيين من جميع الأعمار الذين يبحثون عن تخصيص شجرتهم بسحر يدوي فريد.",
+    },
+    youtubeUrl: "https://youtu.be/2qkMSlsxW4c?si=VC4o8SGNqJJZFRpd",
+  },
+  {
+    id: 8,
+    image: santaClausFaceCraft,
+    title: {
+      en: "Santa Claus face craft",
+      ar: "حرفة وجه بابا نويل",
+    },
+    description: {
+      en: "Learn how to create a cheerful Santa face using cotton, felt, and basic cutting skills. A perfect holiday activity for kids and families who love playful seasonal crafts.",
+      ar: "تعلم كيفية صنع وجه بابا نويل المرح باستخدام القطن واللباد ومهارات القطع الأساسية. نشاط عطلة مثالي للأطفال والعائلات الذين يحبون الحرف الموسمية المرحة.",
+    },
+    youtubeUrl: "https://youtu.be/Emqpph9SM60?si=DiVAZCYF2lgobEZA",
+  },
+  {
+    id: 9,
+    image: christmasAngelCraft,
+    title: {
+      en: "Christmas Angel Craft",
+      ar: "حرفة ملاك الكريسماس",
+    },
+    description: {
+      en: "Learn how to create an elegant paper angel with delicate ribbon details. This beginner-friendly project brings a touch of celestial beauty to your Christmas decor.",
+      ar: "تعلم كيفية صنع ملاك أنيق من الورق بتفاصيل شريط دقيقة. هذا المشروع مناسب للمبتدئين ويضيف لمسة من الجمال السماوي إلى زينة الكريسماس الخاصة بك.",
+    },
+    youtubeUrl: "https://youtu.be/jho4spkRjk0?si=3swIYcCS7Dw0KH2u",
+  },
+  {
+    id: 10,
+    image: popsicleStickChristmasHouseCraft,
+    title: {
+      en: "Popsicle stick Christmas house Craft",
+      ar: "حرفة بيت الكريسماس من أعواد المصاصة",
+    },
+    description: {
+      en: "Learn how to Build a whimsical Christmas house using popsicle sticks, paint, and festive embellishments. A cozy and creative DIY that's ideal for adding handcrafted charm to your winter wonderland.",
+      ar: "تعلم كيفية بناء بيت كريسماس خيالي باستخدام أعواد المصاصة والطلاء والزخارف الاحتفالية. عمل يدوي مبدع ودافئ مثالي لإضافة سحر يدوي إلى عالمك الشتوي الساحر.",
+    },
+    youtubeUrl: "https://youtu.be/4B15EwlnrsY?si=0ao2Uzfijo8wMGxk",
+  },
+  {
+    id: 11,
+    image: glitterFoamChristmasTreeCraft,
+    title: {
+      en: "Glitter foam Christmas tree Craft",
+      ar: "حرفة شجرة الكريسماس من الرغوة اللامعة",
+    },
+    description: {
+      en: "Learn how to create a sparkling Christmas tree using glitter foam sheets, simple shapes, and adhesive gems. Perfect for beginners who want to add festive shimmer to their holiday decorations.",
+      ar: "تعلم كيفية صنع شجرة كريسماس لامعة باستخدام ألواح الرغوة اللامعة والأشكال البسيطة والأحجار اللاصقة. مثالي للمبتدئين الذين يرغبون في إضافة بريق احتفالي إلى زينة العطلات الخاصة بهم.",
+    },
+    youtubeUrl: "https://youtu.be/qGWM9RCWPwA?si=rTwVfSb3xK-a9_8P",
+  },
+  {
+    id: 12,
+    image: miniChristmasWreathCraft,
+    title: {
+      en: "Mini Christmas Wreath Craft",
+      ar: "حرفة إكليل الكريسماس الصغير",
+    },
+    description: {
+      en: "Learn how to design a charming miniature Christmas wreath using soft felt, colorful beads, and ribbon. A fun and beginner-friendly project that adds a cozy, handmade feel to any festive space.",
+      ar: "تعلم كيفية تصميم إكليل كريسماس صغير ساحر باستخدام اللباد الناعم والخرز الملون والشريط. مشروع ممتع وسهل للمبتدئين يضيف شعورًا يدويًا دافئًا إلى أي مساحة احتفالية.",
+    },
+    youtubeUrl: "https://youtu.be/eeojG3dZz1s?si=T_UhuOeGcxMzMSe9",
   },
 ];

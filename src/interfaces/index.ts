@@ -6,10 +6,16 @@ export interface servant {
   image: StaticImageData;
 }
 
-export interface handcraft {
+export interface Handcraft {
   id: number;
-  image: string;
-  title: string;
-  description: string;
+  image: StaticImageData;
+  title: {
+    en: string;
+    ar: string;
+  };
+  description: {
+    en: string;
+    ar: string;
+  };
   youtubeUrl: string;
 }

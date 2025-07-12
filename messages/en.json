@@ -1,0 +1,186 @@
+{
+  "hero": {
+    "titlePart1": "Welcome to",
+    "titlePart2": "Ava Abraam",
+    "titlePart3": "Angels Academy",
+    "subtitle": "Serving young minds with love, creativity, and excellence. Where every child discovers their unique talents and grows into confident, compassionate individuals.",
+    "buttons": {
+      "explore": "Explore Us",
+      "testimonials": "See Our Feedbacks"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "handmade": "Handmade Crafts",
+    "servants": "Our Servants",
+    "contact": "Contact"
+  },
+  "common": {
+    "language": "Language",
+    "en": "English",
+    "ar": "العربية",
+    "welcome": "Welcome",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "about": {
+    "pageTitle": {
+      "titlePart1": "About",
+      "titlePart2": "Us",
+      "subtitle": "Discover our nurturing approach to early childhood education and how we help young minds grow and flourish at Abram's Angels Academy."
+    },
+    "scrollText": "Ava Abraam Angels Academy",
+    "quote": "Special moments are small but meaningful fragments of time like shared laughter, peaceful sunrises, or unexpected kindness that leave a lasting warmth in our hearts. They remind us to cherish the present and find joy in life's simple pleasures.",
+    "infoSection": {
+      "paragraph1": "At <1>Abram's Angels Academy</1>, we believe the early years of childhood are the most precious. Founded in <3>2010</3>, our academy has been a second home to hundreds of children, nurturing their curiosity and helping them take their first confident steps into the world of learning.",
+      "paragraph2": "Our <1>play-based curriculum</1> is carefully designed by early childhood experts to balance structured learning with creative exploration. We maintain a <3>1:6 teacher-to-child ratio</3>, ensuring each child receives personalized attention while developing social skills in our warm, inclusive environment.",
+      "paragraph3": "What sets us apart is our <1>holistic approach</1> that nurtures not just academic readiness but also emotional intelligence, physical coordination, and creative expression. Our <3>certified educators</3> create magical learning experiences that children carry with them long after they graduate from our program.",
+      "paragraph4": "We invite you to visit our <1>sun-filled classrooms</1> and <3>vibrant playground</3> to see firsthand how we turn everyday moments into extraordinary learning opportunities for your little angel."
+    }
+  },
+  "contact": {
+    "pageTitle": {
+      "titlePart1": "Contact",
+      "titlePart2": "Us",
+      "subtitle": "Get in touch with us—we're here to answer your questions, listen to your feedback, and help however we can."
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "namePlaceholder": "Enter Your Name",
+      "emailPlaceholder": "Enter Your Email",
+      "messagePlaceholder": "Your message here...",
+      "sendButton": "Send Message"
+    }
+  },
+  "handmade": {
+    "pageTitle": {
+      "titlePart1": "Handmade",
+      "titlePart2": "Crafts",
+      "subtitle": "Explore our unique collection of handcrafted items, each lovingly created with attention to detail and artistic passion."
+    },
+    "search": {
+      "placeholder": "Search handcrafts...",
+      "resultsCount": "{count} results found"
+    },
+    "cards": {
+      "noResults": {
+        "title": "No handcrafts found",
+        "subtitle": "Try searching for something else..."
+      }
+    }
+  },
+  "servants": {
+    "pageTitle": {
+      "titlePart1": "Our",
+      "titlePart2": "Servants",
+      "subtitle": "Meet our talented team of compassionate servants, committed to serving with humility, care, and unwavering devotion."
+    },
+    "search": {
+      "placeholder": "Search servants...",
+      "resultsCount": "{count} servants found"
+    },
+    "showcase": {
+      "noResultsTitle": "No servants found",
+      "noResultsSubtitle": "Try searching for something else..."
+    }
+  },
+  "home": {
+    "gallery": {
+      "title": "Just Smile",
+      "subtitle": "See the smiles we've created together, because every child deserves happiness."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "subtitle": "To provide hope, opportunity, and a brighter future for every child in need."
+    },
+    "testimonials": {
+      "title": "Feedbacks",
+      "subtitle": "Hear the voices of hope and joy from the children and families we've touched."
+    },
+    "grid": {
+      "items": [
+        {
+          "title": "Entertainment Games Workshop",
+          "description": "Interactive gaming activities and recreational workshops for community engagement"
+        },
+        {
+          "title": "Resurrection Panorama",
+          "description": "A breathtaking visual journey through the story of resurrection"
+        },
+        {
+          "title": "Samaritan Sunday Workshop",
+          "description": "Educational workshop exploring biblical stories and teachings"
+        },
+        {
+          "title": "Science Fiction Workshop",
+          "description": "Exploring the intersection of faith, science, and imagination"
+        },
+        {
+          "title": "I Am a Hero Course",
+          "description": "Personal development and leadership training program"
+        },
+        {
+          "title": "Alexandria Library Trip",
+          "description": "Educational journey to one of the world's greatest libraries"
+        },
+        {
+          "title": "Anba Abram Workshop",
+          "description": "Learning about the life and teachings of Saint Anba Abram"
+        },
+        {
+          "title": "It is Finished",
+          "description": "Reflection on completion and spiritual fulfillment"
+        },
+        {
+          "title": "Bible Competition Awards",
+          "description": "Celebrating excellence in biblical knowledge and study"
+        }
+      ]
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "heading": "Page Not Found",
+    "message": "Sorry, we couldn't find the page you're looking for.",
+    "homeButton": "Go To Home"
+  },
+  "mission": {
+    "header": "Igniting Potential",
+    "ignitionPoints": [
+      {
+        "title": "Spark of Love",
+        "description": "Every journey begins with unconditional love and acceptance"
+      },
+      {
+        "title": "Kindle Curiosity",
+        "description": "We fan the flames of wonder and discovery in every child"
+      },
+      {
+        "title": "Ignite Passion",
+        "description": "Discovering what makes each child's eyes light up with excitement"
+      },
+      {
+        "title": "Fuel Dreams",
+        "description": "Providing the energy and support to reach for the stars"
+      },
+      {
+        "title": "Blaze Trails",
+        "description": "Empowering children to create their own path to success"
+      }
+    ],
+    "cta": {
+      "tagline": "Join Our Family",
+      "title": "Ready to Ignite Your Child's",
+      "highlight": "Potential?",
+      "subtitle": "Take the first step towards unlocking your child's extraordinary future. Every great journey begins with a single spark.",
+      "buttons": {
+        "contact": "Start Messaging Us",
+        "facebook": "Visit Our Facebook"
+      }
+    }
+  }
+}

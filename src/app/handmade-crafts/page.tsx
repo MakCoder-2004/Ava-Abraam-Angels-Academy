@@ -1,7 +1,7 @@
 "use client";
 
 import PageTitle from "@/components/PageTitle";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import HandcraftCards from "../_HandcraftComponents/HandcraftCards";
 import SearchBar from "@/components/SearchBar";
 import Pagination from "@/components/Pagination";
@@ -12,49 +12,57 @@ const HandmadeCrafts = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
 
-  const filteredHandcrafts = handcrafts.filter((handcraft) => {
-    const lowerSearchTerm = searchTerm.toLowerCase();
-    const lowerTitle = handcraft.title.toLowerCase();
-    const lowerDescription = handcraft.description.toLowerCase();
+  // Memoize filtered and sorted handcrafts for better performance
+  const {
+    filteredHandcrafts,
+    sortedHandcrafts,
+    totalPages,
+    currentHandcrafts,
+  } = useMemo(() => {
+    const filtered = handcrafts.filter((handcraft) => {
+      if (!searchTerm) return true;
 
-    if (lowerTitle === lowerSearchTerm) {
-      return true;
-    }
+      const lowerSearchTerm = searchTerm.toLowerCase();
+      const lowerTitleEn = handcraft.title.en.toLowerCase();
+      const lowerTitleAr = handcraft.title.ar.toLowerCase();
+      const lowerDescEn = handcraft.description.en.toLowerCase();
+      const lowerDescAr = handcraft.description.ar.toLowerCase();
 
-    if (lowerTitle.startsWith(lowerSearchTerm)) {
-      return true;
-    }
+      return (
+        lowerTitleEn.includes(lowerSearchTerm) ||
+        lowerTitleAr.includes(lowerSearchTerm) ||
+        lowerDescEn.includes(lowerSearchTerm) ||
+        lowerDescAr.includes(lowerSearchTerm)
+      );
+    });
 
-    if (lowerTitle.includes(lowerSearchTerm)) {
-      return true;
-    }
+    const sorted = [...filtered].sort((a, b) => {
+      const aTitleEn = a.title.en.toLowerCase();
+      const bTitleEn = b.title.en.toLowerCase();
+      const search = searchTerm.toLowerCase();
 
-    if (lowerDescription.includes(lowerSearchTerm)) {
-      return true;
-    }
+      // Exact match comes first
+      if (aTitleEn === search) return -1;
+      if (bTitleEn === search) return 1;
 
-    return false;
-  });
+      // Starts with search term comes next
+      if (aTitleEn.startsWith(search)) return -1;
+      if (bTitleEn.startsWith(search)) return 1;
 
-  const sortedHandcrafts = [...filteredHandcrafts].sort((a, b) => {
-    const aTitle = a.title.toLowerCase();
-    const bTitle = b.title.toLowerCase();
-    const search = searchTerm.toLowerCase();
+      return 0;
+    });
 
-    if (aTitle === search) return -1;
-    if (bTitle === search) return 1;
+    const total = Math.ceil(sorted.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const current = sorted.slice(startIndex, startIndex + itemsPerPage);
 
-    if (aTitle.startsWith(search)) return -1;
-    if (bTitle.startsWith(search)) return 1;
-
-    return 0;
-  });
-
-  // Calculate pagination
-  const totalPages = Math.ceil(sortedHandcrafts.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentHandcrafts = sortedHandcrafts.slice(startIndex, endIndex);
+    return {
+      filteredHandcrafts: filtered,
+      sortedHandcrafts: sorted,
+      totalPages: total,
+      currentHandcrafts: current,
+    };
+  }, [handcrafts, searchTerm, currentPage, itemsPerPage]);
 
   // Reset to first page when search changes
   React.useEffect(() => {
@@ -63,7 +71,6 @@ const HandmadeCrafts = () => {
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
-    // Scroll to top when page changes
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -82,7 +89,12 @@ const HandmadeCrafts = () => {
         />
       </div>
       <HandcraftCards
-        handcrafts={currentHandcrafts.map((h) => ({ ...h, id: String(h.id) }))}
+        handcrafts={currentHandcrafts.map((h) => ({
+          ...h,
+          id: String(h.id),
+          title: h.title.en,
+          description: h.description.en,
+        }))}
       />
       {totalPages > 1 && (
         <div className="mt-12 mb-8">
